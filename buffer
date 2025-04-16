@@ -1,0 +1,20 @@
+
+
+
+
+
+
+user = {
+	name = "Jason",
+	role = "admin"
+	}
+
+function check_access(u)
+	if u.role == "admin" then
+		print("Welcome, " .. u.name)
+	else
+		print("Access Denied")
+	end
+end
+
+check_access(user)
