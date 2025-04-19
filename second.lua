@@ -14,3 +14,10 @@ end
 for names, roles in pairs(users) do
 	check_access(roles)
 end
+
+
+number = { 1,2,3,4,5,6,7,8,9,10)
+
+for numbers in number do
+	print(numbers)
+end
