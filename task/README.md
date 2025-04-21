@@ -1,44 +1,48 @@
-task.lua — Lua Task Switcher
+# task.lua — Terminal Task Switcher
 
-A simple terminal-based task manager written in pure Lua. It allows you to add tasks, list them, and mark them complete — all within a clear, loop-driven CLI interface.
+This is a standalone terminal-based task manager written in pure Lua. It allows you to add tasks, list them in a clean formatted display, mark them as complete, and clear the screen for a better user experience.
 
-Features
-	•	Add tasks with descriptions
-	•	List tasks with [ ] or [x] completion status
-	•	Mark tasks as complete
-	•	Clears the screen between actions for clean UX (cross-platform)
+## Features
 
-Why Lua?
+- Add tasks with short descriptions  
+- View a full task list with status labels  
+- Mark tasks as complete  
+- Clean and simple CLI interface  
+- Cross-platform screen clearing (Windows/macOS/Linux)
 
-Lua is lightweight, fast, and flexible. This utility demonstrates how much can be done with just native tables and control flow — no external libraries needed.
+## Example Usage
 
-Usage Menu
-	1.	Add Task
-	2.	List Tasks
-	3.	Mark Task Complete
-	4.	Exit
-
-Example Output
-
-Task Switcher
-	1.	Add Task
-	2.	List Tasks
-	3.	Mark Task Complete
-	4.	Exit
+```
+== Task Switcher ==
+1. Add Task
+2. List Tasks
+3. Mark Task Complete
+4. Exit
 Choose an option: 2
-	5.	Grocery Store
-	6.	Change Oil
 
-Cross-Platform Screen Clearing
+== Task List ==
+1. Buy groceries  
+   Status: ⏳ Pending
 
-The clear_screen() function uses:
+2. Change oil  
+   Status: ✔ Done
+```
 
-package.config:sub(1,1)
+## Technical Highlights
 
-to detect the OS and runs cls on Windows or clear on Unix systems using os.execute().
+- Written in pure Lua, no dependencies  
+- Uses native `io.read()` and `os.execute()` for terminal interaction  
+- Uses `package.config` to detect platform and execute appropriate clear command  
+- Tracks task list in a simple Lua table (`{ desc = "", done = false }`)
 
-Future Enhancements
-	•	Save and reload tasks from file
-	•	Add due dates, tags, or priorities
-	•	Improve visuals with ANSI color codes
-	•	Error checking and task editing
+## Planned Improvements
+
+- File-based persistence (save and load tasks)  
+- Add task creation timestamps  
+- Add task priority and category tags  
+- Command-line flags for one-shot mode (e.g. `lua task.lua --list`)  
+- ANSI color codes for status and menu
+
+## Author
+
+**Jason R. Pittman**  
