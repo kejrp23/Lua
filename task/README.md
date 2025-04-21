@@ -1,33 +1,44 @@
-README for task.lua
+task.lua — Lua Task Switcher
 
-Lua Task Switcher
+A simple terminal-based task manager written in pure Lua. It allows you to add tasks, list them, and mark them complete — all within a clear, loop-driven CLI interface.
 
-This is a simple terminal-based task manager written in pure Lua. It lets you add tasks, list them, and mark them complete — all from a clean loop-based CLI.
-
-Features:
+Features
 	•	Add tasks with descriptions
-	•	List tasks with [ ] or [x] status
-	•	Mark tasks complete
-	•	Clears the screen between actions for readability (Windows/macOS/Linux)
+	•	List tasks with [ ] or [x] completion status
+	•	Mark tasks as complete
+	•	Clears the screen between actions for clean UX (cross-platform)
 
 Why Lua?
-Lua is small, clean, and fast. You don’t need external libraries to make something like this work. It’s a great example of how Lua’s built-in tables and control flow can power lightweight utilities.
 
-Usage:
-	•		1.	Add Task
-	•		2.	List Tasks
-	•		3.	Mark Task Complete
-	•		4.	Exit
+Lua is lightweight, fast, and flexible. This utility demonstrates how much can be done with just native tables and control flow — no external libraries needed.
 
-Example Output:
-	1.	Grocery Store
-	2.	Change Oil
+Usage Menu
+	1.	Add Task
+	2.	List Tasks
+	3.	Mark Task Complete
+	4.	Exit
 
-Cross-Platform Clear:
-The clear_screen() function uses package.config to detect the OS and runs either ‘cls’ or ‘clear’. Works on Windows and Unix-based systems out of the box.
+Example Output
 
-Ideas for Future:
-	•	Save tasks to a file and reload them
-	•	Add due dates or tags
-	•	Sort by priority or completion
-	•	Add colors with ANSI codes
+Task Switcher
+	1.	Add Task
+	2.	List Tasks
+	3.	Mark Task Complete
+	4.	Exit
+Choose an option: 2
+	5.	Grocery Store
+	6.	Change Oil
+
+Cross-Platform Screen Clearing
+
+The clear_screen() function uses:
+
+package.config:sub(1,1)
+
+to detect the OS and runs cls on Windows or clear on Unix systems using os.execute().
+
+Future Enhancements
+	•	Save and reload tasks from file
+	•	Add due dates, tags, or priorities
+	•	Improve visuals with ANSI color codes
+	•	Error checking and task editing
